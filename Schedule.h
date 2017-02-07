@@ -26,7 +26,7 @@ class Schedule {
             Node(Course c)
                 :data(c),
                  next(nullptr)
-            {                
+            {
             }
         };
 
@@ -106,11 +106,11 @@ int Schedule::getCredits() const
 /**
  * Print the Schedule through use of the display member function
  */
-inline 
+inline
 std::ostream& operator<<(std::ostream &outs, const Schedule &prt)
 {
     prt.display( outs );
-    
+
     return outs;
 }
 #endif

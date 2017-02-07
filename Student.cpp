@@ -1,7 +1,7 @@
 #include <utility>
 #include "Student.h"
 
-// Allow the compiler to define the remaining 
+// Allow the compiler to define the remaining
 // comparison operators
 using namespace std::rel_ops;
 
@@ -18,6 +18,10 @@ Student::Student()
  */
 Student::Student(std::string n)
     :name(n)
+{
+}
+
+Student::~Student()
 {
 }
 

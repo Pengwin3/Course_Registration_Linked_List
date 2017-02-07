@@ -1,5 +1,5 @@
-#ifndef INVENTORY_H_INCLUDED
-#define INVENTORY_H_INCLUDED
+#ifndef STUDENT_H_INCLUDED
+#define STUDENT_H_INCLUDED
 
 #include <iostream>
 
@@ -13,7 +13,7 @@
  * share the same name. We will forgo a more
  * formal student id.
  */
-class Student{
+class Student {
     private:
        std::string name;
        Schedule    schedule;
@@ -30,7 +30,9 @@ class Student{
          *
          * @param n desired name
          */
-        Student(std::string n);
+        Student(std::string);
+
+        ~Student();
 
         /**
          * Retrieve the name attribute
@@ -40,7 +42,7 @@ class Student{
         /**
          * Attempt to enroll in a course.
          *
-         * @return true if the course was successfully added to 
+         * @return true if the course was successfully added to
                 the student schedule and false otherwise
          */
         bool enrollIn(const Course &toAdd);
@@ -82,11 +84,11 @@ bool Student::enrollIn(const Course &toAdd)
 /**
  * Print the Student through use of the display member function
  */
-inline 
+inline
 std::ostream& operator<<(std::ostream &outs, const Student &prt)
 {
     prt.display(outs);
-    
+
     return outs;
 }
 

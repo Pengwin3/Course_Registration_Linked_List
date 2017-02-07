@@ -14,9 +14,9 @@ typedef vector<Student> StudentList;
 
 /**
  * Trim leading and trailing whitespace from a string.
- * 
+ *
  * @param str string to prune
- * 
+ *
  * @pre str is nonempty
  */
 void trim(string &str);
@@ -52,7 +52,7 @@ void printStudentSchedules(std::ostream& outs, const StudentList& students);
  * @param argv[2] Enrollment Requests filename
  */
 int main( int argc, char** argv )
-{      
+{
     // Check Command Line Arguments
     if( argc != 3 ){
         cerr << "Usage: " << argv[0] << " student_file request_file" << "\n";
@@ -94,7 +94,7 @@ void trim(std::string &str)
     int first_nonspace = str.find_first_not_of(" \t");
     int last_non_space = str.find_last_not_of(" \t");
 
-    str = str.substr( 
+    str = str.substr(
         first_nonspace,
         last_non_space + 1
     );
@@ -150,8 +150,8 @@ void processEnrollmentRequests(std::istream& ins, StudentList& students)
         ins >> ws;
         ins >> courseNumber >> crn >> creditHours;
 
-        StudentList::iterator it = find(students.begin(), 
-                                        students.end(), 
+        StudentList::iterator it = find(students.begin(),
+                                        students.end(),
                                         Student(studentName));
 
         if (it != students.end()) {
@@ -159,13 +159,13 @@ void processEnrollmentRequests(std::istream& ins, StudentList& students)
             success = it->enrollIn(Course(courseNumber, crn, creditHours));
 
             if (success) {
-                cout << it->getName() 
-                     << " WAS enrolled in " 
+                cout << it->getName()
+                     << " WAS enrolled in "
                      << courseNumber << "\n";
             }
             else {
-                cout << it->getName() 
-                     << " WAS NOT enrolled in " 
+                cout << it->getName()
+                     << " WAS NOT enrolled in "
                      << courseNumber << "\n";
             }
         }

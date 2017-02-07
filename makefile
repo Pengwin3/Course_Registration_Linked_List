@@ -9,7 +9,7 @@ LFLAGS=
 else
 DISTR=Unix
 EXE=
-LFLAGS=/home/zeil/src/LeakTracer/LeakTracer.o
+LFLAGS=
 endif
 #
 ########################################################################

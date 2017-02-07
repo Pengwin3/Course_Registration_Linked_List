@@ -1,4 +1,4 @@
-#include <utility>
+ #include <utility>
 
 #include "Schedule.h"
 
@@ -8,21 +8,32 @@ using namespace std::rel_ops;
  *
  */
 Schedule::Schedule()
-    :head(nullptr), 
+    :head(nullptr),
      tail(nullptr),
      totalCredits(0)
 {
 }
 
+Schedule::Schedule(const Schedule &src)
+ :head(nullptr),
+  tail(nullptr),
+  totalCredits(0)
+{
+ Node* it = src.head;
+ while (it!= nullptr)
+   {  this->add(it->data);
+     it = it->next; }
+}
 
+Schedule::~Schedule()
+{}
 
-/**
+ /**
  *
  */
 bool Schedule::add(Course course)
 {
-    // remove this line
-    return false;
+  return true;
 }
 
 /**
@@ -38,7 +49,7 @@ void Schedule::display(std::ostream& outs) const
         // oops I forgot to remove most of this function
 
         it = it->next;
-    }    
+    }
 }
 
 
@@ -46,10 +57,7 @@ void Schedule::display(std::ostream& outs) const
 /**
  * You may ignore this function, or use it, the choice is yours
  */
-void Schedule::deAllocateList()
-{
-
-}
+void Schedule::deAllocateList(){}
 
 /**
  * You may ignore this function, or use it, the choice is yours
