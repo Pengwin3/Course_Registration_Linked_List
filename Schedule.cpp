@@ -85,55 +85,8 @@ bool Schedule::add(Course course)
                 }
                 return false;
         }
-        // Course prev;
-        // int CRN = course.getCrn();
-        // std::string NUMBER = course.getNumber();
-        //
-        // if(head == nullptr)
-        // {
-        //         tail = head = new Node(course);
-        //         totalCredits = totalCredits + 3;
-        //         return true;
-        // }
-        // else
-        // {
-        //         Node *step = head;
-        //         bool kill = false;
-        //         while(step != nullptr && kill == false)
-        //         {
-        //                 if(course == step->data)
-        //                 {
-        //                         kill = true;
-        //                 }
-        //         }
-        //         if (kill == true)
-        //         {
-        //                 return false;
-        //         }
-        //         else
-        //         {
-        //                 int courseCredits = course.getCredits();
-        //                 if((totalCredits + courseCredits) > 12)
-        //                 {
-        //                         return false;
-        //                 }
-        //                 else if((totalCredits + courseCredits) <= 12)
-        //                 {
-        //                         tail->next = new Node(course);
-        //                         tail = tail->next;
-        //                         totalCredits += courseCredits;
-        //                         return true;
-        //                 }
-        //         }
-        //         step = step->next;
-        // }
-        //
-        // return true;
 }
 
-/**
- *
- */
 void Schedule::display(std::ostream& outs) const
 {
         Node* it = head;
@@ -150,11 +103,6 @@ void Schedule::display(std::ostream& outs) const
         }
 }
 
-
-
-/**
- * You may ignore this function, or use it, the choice is yours
- */
 void Schedule::deAllocateList()
 {
         // Deallocate the Linked List
